@@ -12,11 +12,5 @@ s.requires_arc = true
 
 s.vendored_frameworks = 'iossdk-gojek.framework'
 s.resource = 'iossdk-gojek.bundle'
-s.dependency 'FlurrySDK'
 
-#s.source_files = 'Pod/Classes'
-#s.resources = 'Pod/Assets/*'
-
-#s.frameworks = 'UIKit', 'CoreText'
-#s.module_name = 'Artsy_UIFonts'
 end
