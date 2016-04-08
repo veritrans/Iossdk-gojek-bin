@@ -10,7 +10,7 @@ s.source           = { :git => "https://github.com/veritrans/Iossdk-gojek-bin.gi
 s.platform     = :ios, '7.0'
 s.requires_arc = true
 
-s.source_files = '**/*.{h,m}'
+s.source_files = 'headers/**/*.{h,m}'
 s.public_header_files = 'headers/*.h'
 s.framework    = 'UIKit', 'Foundation'
 s.ios.vendored_library = 'libiossdk-gojek.a'
