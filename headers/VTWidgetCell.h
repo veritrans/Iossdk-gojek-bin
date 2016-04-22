@@ -7,17 +7,22 @@
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
+
 #import "VTTransactionResult.h"
 #import "VTEnvironment.h"
 
 @interface VTWidgetCell : UITableViewCell
 
-@property (nonatomic) CGFloat yPadding;
-@property (nonatomic) BOOL enableSavedCard;
+@property (nonatomic) BOOL enableSaveCardFeature;
 
-+ (instancetype)widgetWithTableView:(__weak UITableView *)tableView
-                        environment:(VTServerEnvironment)enviroment
-                           andToken:(NSString *)token;
+- (instancetype)initWithTableView:(__weak UITableView *)tableView
+                      environment:(VTServerEnvironment)environment
+                      merchantURL:(NSString *)merchantURL
+                   enableSaveCard:(BOOL)enableSaveCard
+                            token:(NSString *)token;
+
+- (void)setHeaderAuth:(NSDictionary *)headerAuth;
 
 - (CGFloat)cellHeight;
 
