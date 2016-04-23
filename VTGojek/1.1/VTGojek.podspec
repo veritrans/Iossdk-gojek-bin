@@ -11,6 +11,7 @@ s.platform     = :ios, '7.0'
 s.requires_arc = false
 
 #s.source_files = ''
+s.public_header_files = 'iossdk-gojek.framework/Versions/A/Headers/*.h'
 s.vendored_frameworks = 'iossdk-gojek.framework'
 s.resource = 'iossdk-gojek.framework/Versions/A/Resources/iossdk-gojek.bundle'
 s.frameworks    = 'UIKit', 'Foundation'
