@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VTMaskedCreditCard.h"
 
 /**
  Object that represent the successful transaction.
@@ -57,6 +58,11 @@
  Data holder object that contains various payment-specific data.
  */
 @property(nonatomic, readonly) NSDictionary *additionalData;
+
+/**
+ 
+ */
+@property(nonatomic, readonly) VTMaskedCreditCard *maskedCreditCard;
 
 ///---------------------
 /// @name Initialization
