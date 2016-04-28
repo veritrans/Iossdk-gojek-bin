@@ -13,6 +13,7 @@
 #import "VTEnvironment.h"
 #import "VTItemDetail.h"
 #import "VTCustomerDetails.h"
+#import "VTTransactionDetails.h"
 
 @interface VTWidgetCell : UITableViewCell
 
@@ -28,9 +29,9 @@
 
 - (CGFloat)cellHeight;
 
-- (void)payWithTotalPrice:(NSNumber *)totalPrice
-          customerDetails:(VTCustomerDetails *)customerDetails
-              itemDetails:(NSArray <VTItemDetail *>*)itemDetails
-               completion:(void (^)(VTTransactionResult *result, NSError *error))completion;
+- (void)payWithTransactionDetails:(VTTransactionDetails *)transactionDetails
+                  customerDetails:(VTCustomerDetails *)customerDetails
+                      itemDetails:(NSArray <VTItemDetail *>*)itemDetails
+                       completion:(void (^)(VTTransactionResult *result, NSError *error))completion;
 
 @end

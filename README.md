@@ -47,15 +47,16 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 #### Then add this lines of code to your purchase button selector
 
 ```
-let itemDetail = VTItemDetail.init(itemID: <random_characters>, name: <item_name>, price: <item_price>, quantity: <item_quantity>)
+let itemDetail = VTItemDetail.init(itemID: <random_alphanumeric>, name: <item_name>, price: <item_price>, quantity: <item_quantity>)
 let itemDetails: [VTItemDetail] = [itemDetail]
-let customerDetails = VTCustomerDetails.init(firstName: <first_name>, lastName: <last_name>, email: <email>, phone: <phone_number>)
-    
-widget.payWithTotalPrice(<total_price>, customerDetails: customerDetails, itemDetails: itemDetails) { (result, error) in
-    if (error) {
-        //payment error        
+let customerDetails = VTCustomerDetails.init(firstName: <first_name>, lastName: <last_name>, email: <email>, phone: <phone_number>)    
+let transactionDetails = VTTransactionDetails.init(orderID: <random_alphanumeric>, andGrossAmount: 1000)
+        
+widget.payWithTransactionDetails(transactionDetails, customerDetails: customerDetails, itemDetails: itemDetails) { (result, error) in
+    if (error != nil) {
+        //payment error
     } else {
-        //payment success        
+        //payment success
     }
 }
 
