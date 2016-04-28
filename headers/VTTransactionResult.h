@@ -60,7 +60,7 @@
 @property(nonatomic, readonly) NSDictionary *additionalData;
 
 /**
- 
+ Masked card object, will not be nil if doing charge with save card feature enabled
  */
 @property(nonatomic, readonly) VTMaskedCreditCard *maskedCreditCard;
 
