@@ -19,7 +19,7 @@ pod 'VTGojek'
 #### Create widget object
 
 ```
-self.widget = VTWidgetCell.init(tableView: <table object>, environment: .Production, merchantURL: <merchant server URL>, enableSaveCard: false, token: <token>)
+self.widget = VTWidgetCell.init(tableView: <table object>, environment: <.Production / .Sandbox>, merchantURL: <merchant server URL>, enableSaveCard: false, token: <token>)
 ```
 
 #### Set `headerAuth` for request authentication
@@ -50,7 +50,7 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 let itemDetail = VTItemDetail.init(itemID: <random_alphanumeric>, name: <item_name>, price: <item_price>, quantity: <item_quantity>)
 let itemDetails: [VTItemDetail] = [itemDetail]
 let customerDetails = VTCustomerDetails.init(firstName: <first_name>, lastName: <last_name>, email: <email>, phone: <phone_number>)    
-let transactionDetails = VTTransactionDetails.init(orderID: <random_alphanumeric>, andGrossAmount: 1000)
+let transactionDetails = VTTransactionDetails.init(orderID: <random_alphanumeric>, andGrossAmount: <total_price_amount>)
         
 widget.payWithTransactionDetails(transactionDetails, customerDetails: customerDetails, itemDetails: itemDetails) { (result, error) in
     if (error != nil) {
