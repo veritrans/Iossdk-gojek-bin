@@ -27,6 +27,8 @@
 
 - (void)setHeaderAuth:(NSDictionary *)headerAuth;
 
+- (void)reset;
+
 - (CGFloat)cellHeight;
 
 - (void)payWithTransactionDetails:(VTTransactionDetails *)transactionDetails
