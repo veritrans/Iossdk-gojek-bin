@@ -15,9 +15,12 @@
 #import "VTCustomerDetails.h"
 #import "VTTransactionDetails.h"
 
+@protocol VTWidgetCellDelegate;
+
 @interface VTWidgetCell : UITableViewCell
 
 @property (nonatomic) BOOL enableSaveCardFeature;
+@property (nonatomic, assign) id<VTWidgetCellDelegate>delegate;
 
 - (instancetype)initWithTableView:(__weak UITableView *)tableView
                       environment:(VTServerEnvironment)environment
@@ -33,7 +36,13 @@
 
 - (void)payWithTransactionDetails:(VTTransactionDetails *)transactionDetails
                   customerDetails:(VTCustomerDetails *)customerDetails
-                      itemDetails:(NSArray <VTItemDetail *>*)itemDetails
-                       completion:(void (^)(VTTransactionResult *result, NSError *error))completion;
+                      itemDetails:(NSArray <VTItemDetail *>*)itemDetails;
+
+@end
+
+@protocol VTWidgetCellDelegate <NSObject>
+
+- (void)widget:(VTWidgetCell *)widget didPaymentSuccess:(VTTransactionResult *)result;
+- (void)widget:(VTWidgetCell *)widget didPaymentError:(NSError *)error;
 
 @end
