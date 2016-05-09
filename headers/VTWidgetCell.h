@@ -36,13 +36,7 @@
 
 - (void)payWithTransactionDetails:(VTTransactionDetails *)transactionDetails
                   customerDetails:(VTCustomerDetails *)customerDetails
-                      itemDetails:(NSArray <VTItemDetail *>*)itemDetails;
-
-@end
-
-@protocol VTWidgetCellDelegate <NSObject>
-
-- (void)widget:(VTWidgetCell *)widget didPaymentSuccess:(VTTransactionResult *)result;
-- (void)widget:(VTWidgetCell *)widget didPaymentError:(NSError *)error;
+                      itemDetails:(NSArray <VTItemDetail *>*)itemDetails
+                       completion:(void (^)(VTTransactionResult *, NSError *))completion;
 
 @end
