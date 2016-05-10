@@ -37,7 +37,7 @@
 - (void)payWithTransactionDetails:(VTTransactionDetails *)transactionDetails
                   customerDetails:(VTCustomerDetails *)customerDetails
                       itemDetails:(NSArray <VTItemDetail *>*)itemDetails
-          generateTokenCompletion:(void (^)(NSString *token, NSError *error))generateTokenCompletion
-               finishedCompletion:(void (^)(VTTransactionResult *result, NSError *error))finishedCompletion;
+                  tokenCompletion:(void (^)(NSString *token, NSError *error))tokenCompletion
+            transactionCompletion:(void (^)(VTTransactionResult *result, NSError *error))transactionCompletion;
 
 @end
