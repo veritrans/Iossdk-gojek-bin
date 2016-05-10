@@ -52,12 +52,10 @@ let itemDetails: [VTItemDetail] = [itemDetail]
 let customerDetails = VTCustomerDetails.init(firstName: <first_name>, lastName: <last_name>, email: <email>, phone: <phone_number>)    
 let transactionDetails = VTTransactionDetails.init(orderID: <random_alphanumeric>, andGrossAmount: <total_price_amount>)
         
-widget.payWithTransactionDetails(transactionDetails, customerDetails: customerDetails, itemDetails: itemDetails) { (result, error) in
-    if (error != nil) {
-        //payment error
-    } else {
-        //payment success
-    }
+widget.payWithTransactionDetails(transactionDetails, customerDetails: customerDetails, itemDetails: itemDetails, tokenCompletion: { (token, error) in
+    //transaction token retrieved
+}) { (result, error) in
+    //transaction finished
 }
 
 ```
