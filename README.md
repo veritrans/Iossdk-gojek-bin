@@ -3,6 +3,12 @@
 The iOS SDK for Go-Jek contains specialized implementation that contain one core class: `VTWidget`. This `VTWidget` is a subclass of `UITableViewCell`. So, it needs to be embedded inside a `UITableView`.
 
 
+## Release Notes 1.6.13
+* Full screen dialog for 3DS
+* Add close button in dialog
+* Change sandbox clientkey to go-jek's clientkey
+
+
 ## Instantiation
 
 ### Podfile

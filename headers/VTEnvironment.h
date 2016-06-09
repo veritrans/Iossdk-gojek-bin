@@ -6,8 +6,6 @@
 //  Copyright © 2016 Veritrans. All rights reserved.
 //
 
-#define VERSION @"0.1"
-
 /**
  The payment server types.
  */
